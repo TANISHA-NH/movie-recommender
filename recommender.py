@@ -1,7 +1,13 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import zipfile
+import os
 
+# ✅ Unzip the file if not already unzipped
+if not os.path.exists("tmdb_5000_credits.csv"):
+    with zipfile.ZipFile("tmdb_5000_credits.zip", "r") as zip_ref:
+        zip_ref.extractall()
 # Load dataset
 movies = pd.read_csv(r"C:\Users\Tanisha\OneDrive\Desktop\Dayanand\tmdb_5000_credits.csv")
 

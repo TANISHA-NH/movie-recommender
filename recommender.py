@@ -9,7 +9,7 @@ if not os.path.exists("tmdb_5000_credits.csv"):
     with zipfile.ZipFile("tmdb_5000_credits.zip", "r") as zip_ref:
         zip_ref.extractall()
 # Load dataset
-movies = pd.read_csv(r"C:\Users\Tanisha\OneDrive\Desktop\Dayanand\tmdb_5000_credits.csv")
+movies = pd.read_csv("tmdb_5000_credits.csv")
 
 # Fill missing values just in case
 movies = movies[['title', 'cast', 'crew']].dropna()
